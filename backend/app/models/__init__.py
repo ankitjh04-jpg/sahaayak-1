@@ -1,0 +1,1 @@
+"""Document structure is enforced by app.schemas and db.create_indexes."""

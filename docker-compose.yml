@@ -1,0 +1,35 @@
+services:
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    env_file: ./backend/.env
+    environment:
+      MONGO_URL: ${COMPOSE_MONGO_URL:?Set COMPOSE_MONGO_URL in root .env}
+      STORAGE_ROOT: /app/backend/private_objects
+    ports:
+      - "${BACKEND_PORT:?Set BACKEND_PORT}:8001"
+    volumes:
+      - private-objects:/app/backend/private_objects
+    depends_on:
+      mongo:
+        condition: service_healthy
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        REACT_APP_BACKEND_URL: ${PUBLIC_API_ORIGIN:?Set PUBLIC_API_ORIGIN}
+    ports:
+      - "${FRONTEND_PORT:?Set FRONTEND_PORT}:80"
+    depends_on:
+      - backend
+volumes:
+  mongo-data:
+  private-objects:

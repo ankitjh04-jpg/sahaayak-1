@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: sahaayak-backend
+Version: 1.1.0
+Summary: Sahaayak farmer and agricultural expert API
+Requires-Python: >=3.11
+Requires-Dist: fastapi==0.110.1
+Requires-Dist: uvicorn==0.25.0
+Requires-Dist: motor==3.3.1
+Requires-Dist: pymongo==4.6.3
+Requires-Dist: pydantic==2.13.5
+Requires-Dist: httpx==0.28.1
+Requires-Dist: python-multipart==0.0.32
+Requires-Dist: python-dotenv==1.2.3
+Provides-Extra: test
+Requires-Dist: pytest<9,>=8; extra == "test"
+Requires-Dist: pytest-asyncio>=0.23; extra == "test"
+Requires-Dist: requests>=2.32; extra == "test"
+Requires-Dist: pillow>=10; extra == "test"

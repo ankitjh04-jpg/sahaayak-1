@@ -1,0 +1,9 @@
+.login-identity-field{margin-bottom:18px}
+.login-service-status{font-size:10px;line-height:1.7;color:#74816a;margin-top:11px}
+.phone-input:focus-within{outline:2px solid #a9bf9e;outline-offset:1px}
+.phone-input input:focus{outline:none}
+.phone-input input:disabled{opacity:.8}
+.camera-support-note{font-size:9px;line-height:1.7;color:#74816a;margin-top:12px;max-width:380px}
+.capture-status{margin-top:12px;font-size:10px;line-height:1.7;color:var(--green)}
+.header-popover strong{overflow-wrap:anywhere}
+@media(max-width:767px){.login-identity-field{margin-bottom:17px}.login-page input{font-size:16px}.login-page input::placeholder{font-size:12px}.upload-actions{max-width:100%}.upload-actions .btn{max-width:100%}.camera-support-note{font-size:9px;max-width:100%}}

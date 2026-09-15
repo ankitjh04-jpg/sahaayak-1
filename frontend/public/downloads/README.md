@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# sahaayak-1
-farmers helper
-=======
 # Sahaayak — Farmer & Agricultural Expert Workspace
 
 **Detect → Predict → Advise → Validate → Monitor** · SIH26131 · v1.2
@@ -15,7 +11,7 @@ React + TypeScript frontend, FastAPI backend, MongoDB, farmer OTP login, protect
 | Farmer name | Saved after successful OTP verification; full name displayed on Overview |
 | Twilio Verify SMS | Adapter implemented; automatically activates when all three Twilio credentials are configured. Without them, real SMS login is unavailable—never falsely successful |
 | Farmer demo | Explicit **Farmer demo** button when `DEMO_MODE=true`; not real phone verification |
-| Expert access | Email + password only. In `DEMO_MODE=true`, the demo expert account is created automatically; production accounts remain administrator-created |
+| Expert access | Email + password only, created by a local administrator. No public signup or demo bypass |
 | Aadhaar | **Demo check only**. Returns `verified=false`; collects no Aadhaar number. Not proof of identity |
 | Live weather | Open-Meteo without a key for noncommercial demo use; automatically uses OpenWeather when its key is configured |
 | Google Maps | Activates with a restricted Google Maps browser key; otherwise an explicitly labeled OpenStreetMap fallback |
@@ -33,7 +29,7 @@ React + TypeScript frontend, FastAPI backend, MongoDB, farmer OTP login, protect
 
 - Python **3.11 or 3.12**
 - Node.js **20 or 22**
-- Yarn **1.22** (with Node 20/22: `corepack enable` then `corepack prepare yarn@1.22.22 --activate`; the setup scripts also discover Corepack directly on Windows)
+- Yarn **1.22** (with Node 20/22: `corepack enable` then `corepack prepare yarn@1.22.22 --activate`)
 - MongoDB Community Server running locally, or a MongoDB connection URI you control
 - Internet for installing dependencies, weather, map tiles, and web fonts
 
@@ -56,8 +52,6 @@ docker run -d --name sahaayak-mongo -p 127.0.0.1:27017:27017 -v sahaayak-local-m
 Choose **one** database option. The default local backend URI is `mongodb://127.0.0.1:27017`.
 
 ### Configure an expert account
-
-When `DEMO_MODE=true`, the app automatically creates the demo expert account using `DEMO_EXPERT_EMAIL`, `DEMO_EXPERT_PASSWORD`, and `DEMO_EXPERT_NAME`. The local demo defaults are `ankitjh04@gmail.com` and `SahaayakExpert2026!`, so no terminal setup is required for the demo login.
 
 With MongoDB running:
 
@@ -231,4 +225,3 @@ sahaayak/
 ```
 
 The source download excludes `.env`, passwords, API keys, databases, uploaded farmer files, dependencies and generated build output. See the technical document for API contracts, indexes, adapter boundaries, and operational considerations.
->>>>>>> 3d5b27b (Sahaayak: crop disease prediction with full diagnosis + guidance UI)

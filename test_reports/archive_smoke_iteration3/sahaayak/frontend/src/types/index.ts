@@ -1,0 +1,8 @@
+export type Language = 'en' | 'hi' | 'pa';
+export interface User { id: string; phone: string; role: 'farmer' | 'expert'; language: Language; profile: { name: string; location: string } }
+export interface FarmField { id: string; name: string; crop: string; location: string; acreage: number; sowing_date: string; soil_profile: { ph?: number; nitrogen?: number; phosphorus?: number; potassium?: number }; latitude?: number; longitude?: number; seeded?: boolean }
+export interface Source { id: string; title: string; publisher: string; url: string; scope: string; excerpt: string; document_version: string }
+export interface Review { id: string; expert_name: string; decision: string; recommendation: string; rationale: string; created_at: string; source: Source; mode: string }
+export interface Advisory { id: string; title: string; crop: string; location: string; field_name: string; field_id: string; farmer_name: string; created_at: string; status: string; seeded?: boolean; inputs: { query: string; input_type: string; language: Language; upload_ids: string[] }; recommendation?: { title: string; summary: string; steps: string[]; safety: string }; confidence: number | null; confidence_label: string; missing_inputs: string[]; assumptions: string[]; citations: Source[]; expert_recommendation?: string; expert_name?: string; reviews?: Review[]; feedback?: { helpful: boolean }; monitoring_eligible?: boolean; auto_training?: boolean }
+export interface Submission { field_id: string; query: string; input_type: string; language: Language; upload_ids: string[]; idempotency_key: string }
+export interface Job { id: string; status: string; operation: string; retries: number; provider_error?: string }

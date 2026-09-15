@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-08",
+  "scope": "Credential-free SIH demonstration",
+  "backend_regression": {"passed": 12, "failed": 0, "report": "pytest/pytest_results.xml"},
+  "typescript": "passed",
+  "production_build": "passed; final_frontend_build.log",
+  "initial_report": "iteration_1.json",
+  "initial_followup_issues": {
+    "native_option_hydration_warning": "fixed; no nested option spans or hydration warnings in browser recheck",
+    "offline_sync_visibility": "fixed; per-owner persistent sync confirmation and immediate history refresh",
+    "otp_expiry_boundary": "verified; expired challenge rejected HTTP 400",
+    "microphone_permission_denied": "verified; clear permission feedback, no recording started",
+    "mobile_sonner_container_overflow": "fixed; constrained width, positioned above bottom navigation"
+  },
+  "browser_followup": {
+    "offline_text_and_image_save": "passed",
+    "offline_reload_queue_persistence": "passed",
+    "automatic_reconnect_sync_and_history_refresh": "passed",
+    "expert_review_native_source_option": "passed",
+    "desktop_1920x800_overflow": [],
+    "mobile_390x844_overflow": [],
+    "restored_demo_counts": {"fields": 2, "advisories": 3}
+  },
+  "known_boundaries": [
+    "No live OTP, vision, transcription, weather, LLM or WhatsApp transport",
+    "Local private object-store adapter, not a cloud service",
+    "Browser voice depends on installed language voices",
+    "Curated general FAO retrieval, not vector search or local pesticide labeling",
+    "Primary UI and response templates multilingual; some metadata/operational copy English",
+    "Docker configuration provided but container runtime not executed"
+  ],
+  "unresolved_tested_flow_failures": []
+}

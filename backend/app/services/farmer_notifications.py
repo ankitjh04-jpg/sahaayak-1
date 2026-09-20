@@ -1,9 +1,11 @@
 from ..db import db
 from ..security.auth import stamp
+from .copy import pick
 
 async def notify_review(case, review):
     status = 'needs_information' if review['decision'] == 'needs_information' else 'verified'
-    doc = {'id': review['id'], 'owner': case['owner'], 'advisory_id': case['id'], 'review_id': review['id'], 'title': 'Your expert has responded', 'message': f'{review["expert_name"]} reviewed your {case["crop"]} advisory.', 'crop': case['crop'], 'input_type': case['inputs']['input_type'], 'question': case['title'], 'status': status, 'created_at': review['created_at'], 'read_at': None}
+    language = case.get('inputs', {}).get('language', 'en')
+    doc = {'id': review['id'], 'owner': case['owner'], 'advisory_id': case['id'], 'review_id': review['id'], 'title': pick(language, 'expert_responded_title'), 'message': pick(language, 'expert_responded_message').format(expert=review['expert_name'], crop=case['crop']), 'crop': case['crop'], 'input_type': case['inputs']['input_type'], 'question': case['title'], 'status': status, 'created_at': review['created_at'], 'read_at': None}
     await db.notifications.update_one({'id': doc['id']}, {'$setOnInsert': doc}, upsert=True)
     await db.expert_reviews.update_one({'id': review['id']}, {'$set': {'notification_sent': True}})
 

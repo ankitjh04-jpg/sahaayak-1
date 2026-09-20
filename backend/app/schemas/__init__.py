@@ -2,7 +2,7 @@ from datetime import date
 from typing import Literal
 from pydantic import BaseModel, Field, ConfigDict, model_validator, field_validator
 import unicodedata
-Language = Literal['en', 'hi', 'pa']
+Language = Literal['en', 'hi', 'pa', 'or']
 
 class Document(BaseModel):
     model_config = ConfigDict(extra='allow')

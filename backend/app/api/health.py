@@ -34,4 +34,4 @@ async def weather(latitude: float | None = Query(None, ge=-90, le=90), longitude
 @router.get('/config')
 async def public_config():
     # Google browser keys are public identifiers; restrict by API + HTTP referrer.
-    return {'demo_mode': DEMO_MODE, 'map_tile_url': OSM_TILE_URL, 'languages': ['en', 'hi', 'pa'], 'otp_mode': otp_mode(), 'weather_provider': weather_provider(), 'google_maps_browser_key': GOOGLE_MAPS_BROWSER_KEY, 'google_maps_map_id': GOOGLE_MAPS_MAP_ID, 'expert_auth': 'email_password', 'aadhaar_mode': 'demo_only'}
+    return {'demo_mode': DEMO_MODE, 'map_tile_url': OSM_TILE_URL, 'languages': ['en', 'hi', 'pa', 'or'], 'otp_mode': otp_mode(), 'weather_provider': weather_provider(), 'google_maps_browser_key': GOOGLE_MAPS_BROWSER_KEY, 'google_maps_map_id': GOOGLE_MAPS_MAP_ID, 'expert_auth': 'email_password', 'aadhaar_mode': 'demo_only'}

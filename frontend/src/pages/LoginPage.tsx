@@ -43,7 +43,7 @@ export default function LoginPage() {
  const explore=async(role:'farmer'|'expert')=>{if(role==='expert'){navigate('/expert/login');return;}setBusy(true);setError('');try{await switchRole('farmer');navigate('/');}catch(e:any){setError(e.message);}finally{setBusy(false);}};
  return <div className="login-page">
   <img className="login-background" src="/images/wheat-hero.jpg" alt="Green wheat growing in sunlight"/><div className="login-scrim"/>
-  <header className="login-header"><Brand light/><select data-testid="login-language" aria-label="Language" value={language} disabled={busy||sent} onChange={e=>setLanguage(e.target.value as Language)}><option value="en" label="English"/><option value="hi" label="हिन्दी"/><option value="pa" label="ਪੰਜਾਬੀ"/></select></header>
+  <header className="login-header"><Brand light/><select data-testid="login-language" aria-label="Language" value={language} disabled={busy||sent} onChange={e=>setLanguage(e.target.value as Language)}><option value="en" label="English"/><option value="hi" label="हिन्दी"/><option value="pa" label="ਪੰਜਾਬੀ"/><option value="or" label="ଓଡ଼ିଆ"/></select></header>
   <div className="login-content">
    <p className="eyebrow" data-testid="login-eyebrow">{t('ROOTED IN YOUR WELL-BEING','आपकी खुशहाली से जुड़ा','ਤੁਹਾਡੀ ਖੁਸ਼ਹਾਲੀ ਨਾਲ ਜੁੜਿਆ')}</p>
    <h1 data-testid="login-title">{t('Good farming starts','अच्छी खेती की शुरुआत','ਚੰਗੀ ਖੇਤੀ ਦੀ ਸ਼ੁਰੂਆਤ')}<br/><em>{t('with good company.','एक अच्छे साथी से।','ਚੰਗੇ ਸਾਥੀ ਨਾਲ।')}</em></h1>

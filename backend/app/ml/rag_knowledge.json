@@ -1,0 +1,1156 @@
+{
+  "knowledge_base": "Sahaayak Agricultural Disease Knowledge Base",
+  "version": "1.0",
+  "language": "en",
+  "region": "India",
+  "description": "RAG-ready structured knowledge for the 35 plant-disease image classes used by Sahaayak.",
+  "intended_use": "Retrieval-augmented decision support after ML image classification.",
+  "retrieval_fields": [
+    "crop",
+    "disease",
+    "dataset_label",
+    "aliases",
+    "region"
+  ],
+  "important_rules": [
+    "The ML classifier determines the image class; this knowledge base does not replace the classifier.",
+    "Retrieve by crop + disease + region before semantic retrieval where possible.",
+    "Never invent pesticide, fertilizer, dosage, concentration, product, or application interval information.",
+    "If a chemical recommendation is absent, tell the user that no source-backed chemical recommendation is available in this knowledge base.",
+    "Chemical information must be checked against the current Indian registered product label and local agricultural advisory before use.",
+    "Fertilizer guidance is general unless a source explicitly provides a crop- and situation-specific recommendation.",
+    "For low-confidence model predictions, present the result as uncertain and recommend clearer imagery or expert confirmation.",
+    "Nearby stores should be queried separately from this knowledge base because inventory and location change."
+  ],
+  "sources": {
+    "icar_kharif_2025": "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
+    "icar_kharif_2025_alt": "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf",
+    "icar_potato_late_blight": "https://www.icar.gov.in/sites/default/files/2022-06/IH-November-December-2019.pdf",
+    "icar_wheat_yellow_rust": "https://icar.gov.in/en/node/5291",
+    "icar_wheat_rust_taskforce": "https://icar.gov.in/index.php/en/node/4151",
+    "icar_onion_ipm": "https://www.icar.gov.in/sites/default/files/2022-07/QRT-DOGR-01.pdf",
+    "icar_west_bengal": "https://icar.gov.in/en/node/17296",
+    "icar_crop_management": "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+  },
+  "diseases": [
+    {
+      "id": "cauliflower_bacterial_spot_rot",
+      "crop": "Cauliflower",
+      "disease": "Bacterial spot/rot",
+      "dataset_label": "Cauliflower_Bacterial_Spot_Rot",
+      "aliases": [],
+      "disease_type": "bacterial",
+      "symptoms": [
+        "Water-soaked or dark leaf lesions may enlarge and coalesce.",
+        "Rotting tissue can become soft under wet conditions."
+      ],
+      "management": [
+        "Remove badly affected plant debris.",
+        "Avoid prolonged leaf wetness and overhead irrigation where practical.",
+        "Use clean planting material and improve field sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Use soil-test-based balanced nutrition; avoid excessive nitrogen that produces overly lush, disease-prone growth."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cauliflower_black_rot",
+      "crop": "Cauliflower",
+      "disease": "Black rot",
+      "dataset_label": "Cauliflower_Black_Rot",
+      "aliases": [],
+      "disease_type": "bacterial",
+      "symptoms": [
+        "V-shaped yellow to brown lesions may extend inward from leaf margins.",
+        "Leaf veins can darken and affected tissue may wilt."
+      ],
+      "management": [
+        "Use disease-free seed/transplants.",
+        "Sanitize tools and remove infected crop residues.",
+        "Avoid working in wet foliage and improve drainage."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition based on soil testing; avoid excessive nitrogen."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cauliflower_downy_mildew",
+      "crop": "Cauliflower",
+      "disease": "Downy mildew",
+      "dataset_label": "Cauliflower_Downy_Mildew",
+      "aliases": [],
+      "disease_type": "oomycete",
+      "symptoms": [
+        "Yellow or pale angular lesions on leaves.",
+        "Downy growth may develop on the underside during humid conditions."
+      ],
+      "management": [
+        "Reduce leaf wetness and improve air circulation.",
+        "Remove severely infected leaves/residues.",
+        "Use appropriate crop rotation and sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Avoid excessive nitrogen and maintain balanced nutrition."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cauliflower_healthy",
+      "crop": "Cauliflower",
+      "disease": "Healthy",
+      "dataset_label": "Cauliflower_Healthy",
+      "aliases": [],
+      "disease_type": "none",
+      "symptoms": [
+        "No clear disease symptoms in the supplied image."
+      ],
+      "management": [
+        "Continue routine scouting, sanitation, irrigation and pest monitoring."
+      ],
+      "fertilizer_guidance": [
+        "Follow soil-test-based nutrient management and crop-stage recommendations."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cauliflower_insect_hole",
+      "crop": "Cauliflower",
+      "disease": "Insect feeding damage",
+      "dataset_label": "Cauliflower_Insect_Hole",
+      "aliases": [],
+      "disease_type": "insect",
+      "symptoms": [
+        "Irregular holes or chewing damage on leaves.",
+        "Fresh feeding may be accompanied by larvae, eggs or frass."
+      ],
+      "management": [
+        "Scout undersides of leaves and growing points.",
+        "Use physical/biological IPM measures where suitable.",
+        "Use chemical control only when pest identification and local recommendations justify it."
+      ],
+      "fertilizer_guidance": [
+        "Balanced nutrition helps maintain plant vigor; fertilizer does not directly cure insect damage."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_aphids",
+      "crop": "Cotton",
+      "disease": "Aphids",
+      "dataset_label": "Cotton_Aphids",
+      "aliases": [],
+      "disease_type": "insect",
+      "symptoms": [
+        "Clusters of small soft-bodied insects on tender shoots and leaf undersides.",
+        "Leaves may curl or become sticky from honeydew; sooty mold can develop."
+      ],
+      "management": [
+        "Monitor colonies and natural enemies.",
+        "Avoid unnecessary broad-spectrum insecticide use that can disrupt beneficial insects.",
+        "Use only locally registered aphid control when thresholds/recommendations justify treatment."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition; avoid excessive nitrogen that can encourage succulent growth."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_bacterial_blight",
+      "crop": "Cotton",
+      "disease": "Bacterial blight",
+      "dataset_label": "Cotton_Bacterial_Blight",
+      "aliases": [],
+      "disease_type": "bacterial",
+      "symptoms": [
+        "Angular water-soaked to dark lesions on leaves.",
+        "Bacterial infection may also affect petioles, stems and bolls."
+      ],
+      "management": [
+        "Use clean seed and resistant/tolerant varieties where available.",
+        "Remove infected residues and avoid unnecessary leaf wetness.",
+        "Practice crop rotation and sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Use balanced, soil-test-based nutrition."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_curl_virus",
+      "crop": "Cotton",
+      "disease": "Cotton leaf curl virus",
+      "dataset_label": "Cotton_Curl_Virus",
+      "aliases": [],
+      "disease_type": "viral",
+      "symptoms": [
+        "Leaf curling, vein thickening and enations may occur.",
+        "Plants can become stunted with reduced leaf area."
+      ],
+      "management": [
+        "Control the vector through integrated pest management.",
+        "Rogue severely infected plants where recommended locally.",
+        "Use resistant/tolerant cultivars and clean planting material."
+      ],
+      "fertilizer_guidance": [
+        "Fertilizer cannot cure a virus; maintain balanced nutrition to reduce additional stress."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_fusarium_wilt",
+      "crop": "Cotton",
+      "disease": "Fusarium wilt",
+      "dataset_label": "Cotton_Fusarium_Wilt",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Yellowing and wilting may begin on individual leaves or one side of the plant.",
+        "Vascular discoloration may be visible in affected stems/roots."
+      ],
+      "management": [
+        "Use resistant varieties where available.",
+        "Rotate crops and maintain field sanitation.",
+        "Avoid moving contaminated soil/plant debris between fields."
+      ],
+      "fertilizer_guidance": [
+        "Avoid excessive nitrogen; base nutrient applications on soil testing."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_healthy",
+      "crop": "Cotton",
+      "disease": "Healthy",
+      "dataset_label": "Cotton_Healthy",
+      "aliases": [],
+      "disease_type": "none",
+      "symptoms": [
+        "No clear disease symptoms in the supplied image."
+      ],
+      "management": [
+        "Continue scouting for sucking pests, boll damage and foliar diseases."
+      ],
+      "fertilizer_guidance": [
+        "Use soil-test-based balanced nutrition and crop-stage recommendations."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_powdery_mildew",
+      "crop": "Cotton",
+      "disease": "Powdery mildew",
+      "dataset_label": "Cotton_Powdery_Mildew",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "White powdery growth may appear on leaf surfaces.",
+        "Severely affected leaves may yellow and dry."
+      ],
+      "management": [
+        "Improve air circulation and avoid excessive humidity where practical.",
+        "Remove heavily infected material where appropriate.",
+        "Use locally registered fungicide only when disease and local advisory justify it."
+      ],
+      "fertilizer_guidance": [
+        "Avoid excessive nitrogen and maintain balanced nutrition."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "cotton_target_spot",
+      "crop": "Cotton",
+      "disease": "Target spot",
+      "dataset_label": "Cotton_Target_Spot",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Circular brown lesions can develop with concentric ring patterns.",
+        "Older lesions may enlarge and cause defoliation."
+      ],
+      "management": [
+        "Use crop sanitation and rotation.",
+        "Manage canopy humidity and avoid prolonged leaf wetness.",
+        "Use resistant/tolerant material where available."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition and avoid excessive nitrogen."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "maize_healthy",
+      "crop": "Maize",
+      "disease": "Healthy",
+      "dataset_label": "Maize_Healthy",
+      "aliases": [],
+      "disease_type": "none",
+      "symptoms": [
+        "No clear disease symptoms in the supplied image."
+      ],
+      "management": [
+        "Continue routine scouting for foliar diseases and insect pests."
+      ],
+      "fertilizer_guidance": [
+        "Use soil-test-based balanced NPK and micronutrient management."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "maize_leaf_blight",
+      "crop": "Maize",
+      "disease": "Maize leaf blight",
+      "dataset_label": "Maize_Leaf_Blight",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Elongated tan to brown lesions can expand across leaves.",
+        "Severe infection can reduce green leaf area."
+      ],
+      "management": [
+        "Use tolerant/resistant hybrids where available.",
+        "Remove or manage infected residues and rotate crops.",
+        "Avoid prolonged leaf wetness and excessive canopy humidity."
+      ],
+      "fertilizer_guidance": [
+        "Balanced nutrition, particularly avoiding excessive nitrogen, supports better crop management."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "maize_leaf_spot",
+      "crop": "Maize",
+      "disease": "Maize leaf spot",
+      "dataset_label": "Maize_Leaf_Spot",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Small brown to gray leaf spots that can enlarge or coalesce.",
+        "Severe infection may cause premature leaf drying."
+      ],
+      "management": [
+        "Use resistant/tolerant hybrids where available.",
+        "Maintain sanitation and crop rotation.",
+        "Scout early and follow local extension recommendations if disease pressure is high."
+      ],
+      "fertilizer_guidance": [
+        "Use soil-test-based balanced nutrition."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "maize_maize_rust",
+      "crop": "Maize",
+      "disease": "Common rust",
+      "dataset_label": "Maize_Maize_Rust",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Small reddish-brown rust pustules occur on leaves.",
+        "Pustules can become numerous under favorable conditions."
+      ],
+      "management": [
+        "Use resistant/tolerant hybrids where available.",
+        "Monitor fields and avoid unnecessary fungicide use.",
+        "Follow local extension advice when disease pressure is significant."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced crop nutrition; fertilizer is not a direct cure for rust."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "maize_northern_leaf_blight",
+      "crop": "Maize",
+      "disease": "Northern corn leaf blight",
+      "dataset_label": "Maize_Northern_Leaf_Blight",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Long, cigar-shaped gray-green to brown lesions may develop on leaves.",
+        "Lesions can merge and cause extensive leaf blighting."
+      ],
+      "management": [
+        "Use resistant/tolerant hybrids where available.",
+        "Rotate crops and manage infected residues.",
+        "Scout during cool, humid periods."
+      ],
+      "fertilizer_guidance": [
+        "Balanced nutrition and avoidance of unnecessary excess nitrogen are preferred."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "maize_streak_virus",
+      "crop": "Maize",
+      "disease": "Maize streak virus",
+      "dataset_label": "Maize_Streak_Virus",
+      "aliases": [],
+      "disease_type": "viral",
+      "symptoms": [
+        "Fine pale streaks or chlorotic lines may run along leaf veins.",
+        "Plants may be stunted under severe infection."
+      ],
+      "management": [
+        "Manage the insect vector through locally recommended IPM.",
+        "Use resistant/tolerant varieties where available.",
+        "Rogue severely affected plants when recommended and control volunteer hosts."
+      ],
+      "fertilizer_guidance": [
+        "Fertilizer does not cure a virus; maintain balanced nutrition to minimize plant stress."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "onion_busuk_daun",
+      "crop": "Onion",
+      "disease": "Leaf blight/leaf rot (dataset label: Busuk Daun)",
+      "dataset_label": "Onion_Busuk_Daun",
+      "aliases": [],
+      "disease_type": "fungal_or_oomycete",
+      "symptoms": [
+        "Leaf lesions and progressive browning/rotting can occur, especially under humid conditions."
+      ],
+      "management": [
+        "Remove badly infected leaves/residues.",
+        "Improve drainage and air circulation.",
+        "Avoid prolonged leaf wetness and follow local onion disease advisories."
+      ],
+      "fertilizer_guidance": [
+        "Use balanced nutrition and avoid excess nitrogen; apply FYM/organic matter according to local recommendations and soil condition."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "onion_healthy",
+      "crop": "Onion",
+      "disease": "Healthy",
+      "dataset_label": "Onion_Healthy",
+      "aliases": [],
+      "disease_type": "none",
+      "symptoms": [
+        "No clear disease symptoms in the supplied image."
+      ],
+      "management": [
+        "Continue scouting for thrips and foliar diseases.",
+        "Maintain drainage and sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Use soil-test-based nutrient management; well-rotted FYM/compost may be used according to local recommendations."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf",
+        "https://www.icar.gov.in/sites/default/files/2022-07/QRT-DOGR-01.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "onion_moler",
+      "crop": "Onion",
+      "disease": "Fusarium basal rot (Moler)",
+      "dataset_label": "Onion_Moler",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Yellowing and wilting may start from older leaves.",
+        "Basal plate and roots may rot; bulbs can become soft."
+      ],
+      "management": [
+        "Use healthy planting material.",
+        "Improve drainage and avoid injury to bulbs.",
+        "Use crop rotation and sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Avoid over-irrigation and maintain balanced soil fertility."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "onion_trotol",
+      "crop": "Onion",
+      "disease": "Purple blotch (Trotol)",
+      "dataset_label": "Onion_Trotol",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Purple-brown lesions can develop on leaves.",
+        "Lesions may enlarge and cause leaf tip dieback."
+      ],
+      "management": [
+        "Remove infected residues.",
+        "Improve air movement and reduce prolonged leaf wetness.",
+        "Use crop rotation and locally recommended disease-management practices."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition; avoid excessive nitrogen."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "potato_early_blight",
+      "crop": "Potato",
+      "disease": "Early blight",
+      "dataset_label": "Potato_Early_Blight",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Brown circular lesions with concentric rings may develop on older leaves.",
+        "Severe infection can cause defoliation."
+      ],
+      "management": [
+        "Use healthy seed tubers.",
+        "Maintain crop vigor and sanitation.",
+        "Rotate crops and manage volunteer potatoes."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition; avoid nutrient stress."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/2022-06/IH-November-December-2019.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "potato_healthy",
+      "crop": "Potato",
+      "disease": "Healthy",
+      "dataset_label": "Potato_Healthy",
+      "aliases": [],
+      "disease_type": "none",
+      "symptoms": [
+        "No clear disease symptoms in the supplied image."
+      ],
+      "management": [
+        "Continue scouting for early and late blight and maintain sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Use soil-test-based balanced nutrition and crop-stage recommendations."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/2022-06/IH-November-December-2019.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "potato_late_blight",
+      "crop": "Potato",
+      "disease": "Late blight",
+      "dataset_label": "Potato_Late_Blight",
+      "aliases": [],
+      "disease_type": "oomycete",
+      "symptoms": [
+        "Water-soaked dark lesions can rapidly expand on leaves.",
+        "White sporulation may occur under humid conditions.",
+        "Tuber infection can cause brown internal rot."
+      ],
+      "management": [
+        "Use disease-free seed and destroy infected haulms/residues as locally advised.",
+        "Use forecasting/early-warning approaches where available.",
+        "Avoid allowing disease to establish before protective treatment when local advisories call for fungicide use."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition and avoid excessive nitrogen that can promote dense, humid canopies."
+      ],
+      "chemical_management": [
+        "ICAR/CPRI guidance has documented contact fungicides such as mancozeb 75% WP, propineb 70% WP and chlorothalonil for late-blight management, with systemic mixtures used when disease is present. Exact concentration and schedule must be checked against the current Indian product label/local advisory before use."
+      ],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/2022-06/IH-November-December-2019.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "rice_bacterial_blight",
+      "crop": "Rice",
+      "disease": "Bacterial leaf blight",
+      "dataset_label": "Rice_Bacterial_Blight",
+      "aliases": [],
+      "disease_type": "bacterial",
+      "symptoms": [
+        "Water-soaked to yellow-orange lesions often begin near leaf tips or margins.",
+        "Leaves may wilt and dry under severe infection."
+      ],
+      "management": [
+        "Use resistant/tolerant varieties where available.",
+        "Avoid excessive nitrogen and manage irrigation/drainage appropriately.",
+        "Use healthy seed and field sanitation."
+      ],
+      "fertilizer_guidance": [
+        "Use balanced fertilizer based on soil test; avoid excessive nitrogen."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf",
+        "https://icar.gov.in/en/node/17296"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "rice_blast",
+      "crop": "Rice",
+      "disease": "Blast",
+      "dataset_label": "Rice_Blast",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Spindle-shaped leaf lesions with gray centers and darker margins may occur.",
+        "Neck or panicle infection can cause poor grain filling."
+      ],
+      "management": [
+        "Use resistant/tolerant varieties where available.",
+        "Use healthy seed and field sanitation.",
+        "Manage nitrogen and water carefully and scout from early crop stages."
+      ],
+      "fertilizer_guidance": [
+        "Balanced fertilizer management is important; avoid excessive nitrogen."
+      ],
+      "chemical_management": [
+        "ICAR's 2025 Kharif advisory documented seed treatment with tricyclazole at 2 g/kg seed and propiconazole 25 EC at 500 ml/ha for blast control. Use this only as a source-backed historical/current advisory reference and verify the current registered label, crop-stage instructions and local recommendation before application."
+      ],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/2025-10/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "rice_brown_spot",
+      "crop": "Rice",
+      "disease": "Brown spot",
+      "dataset_label": "Rice_Brown_Spot",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Small circular to oval brown lesions may occur on leaves.",
+        "Severe infection can reduce photosynthetic area and grain quality."
+      ],
+      "management": [
+        "Use healthy seed and good field sanitation.",
+        "Maintain adequate plant nutrition and avoid severe nutrient stress.",
+        "Use balanced irrigation and crop management."
+      ],
+      "fertilizer_guidance": [
+        "Correct nutrient deficiencies based on soil/plant testing; balanced nutrition is particularly important in stressed crops."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf",
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "rice_tungro",
+      "crop": "Rice",
+      "disease": "Tungro",
+      "dataset_label": "Rice_Tungro",
+      "aliases": [],
+      "disease_type": "viral",
+      "symptoms": [
+        "Plants may become yellow to orange and stunted.",
+        "Leaves may show yellow-orange discoloration and reduced growth."
+      ],
+      "management": [
+        "Use resistant/tolerant varieties where available.",
+        "Manage the insect vector using locally recommended IPM.",
+        "Remove volunteer rice and maintain field sanitation where recommended."
+      ],
+      "fertilizer_guidance": [
+        "Fertilizer does not cure tungro; maintain balanced nutrition and avoid using fertilizer as a substitute for vector/disease management."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf",
+        "https://icar.gov.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "wheat_brown_rust",
+      "crop": "Wheat",
+      "disease": "Brown/leaf rust",
+      "dataset_label": "Wheat_Brown_Rust",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Orange-brown rust pustules occur mainly on leaf surfaces.",
+        "Severe disease can reduce green leaf area and grain filling."
+      ],
+      "management": [
+        "Use resistant/tolerant varieties where available.",
+        "Scout regularly, especially during favorable weather.",
+        "Follow local rust advisories for fungicide decisions."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition; avoid excessive nitrogen."
+      ],
+      "chemical_management": [
+        "ICAR wheat-rust guidance has documented triazole fungicides such as propiconazole and tebuconazole for rust management in specific advisories. Verify the current registered label and local recommendation before use."
+      ],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/index.php/en/node/4151",
+        "https://icar.gov.in/en/node/5291"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "wheat_crown_root_rot",
+      "crop": "Wheat",
+      "disease": "Crown/root rot",
+      "dataset_label": "Wheat_Crown_Root_Rot",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Plants may show poor vigor, yellowing or premature drying.",
+        "Root/crown tissues may become discolored or rotted."
+      ],
+      "management": [
+        "Use healthy seed and suitable crop rotation.",
+        "Improve drainage and avoid waterlogging.",
+        "Use locally recommended resistant/tolerant varieties and seed treatments where applicable."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition and avoid severe nutrient stress."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "wheat_healthy",
+      "crop": "Wheat",
+      "disease": "Healthy",
+      "dataset_label": "Wheat_Healthy",
+      "aliases": [],
+      "disease_type": "none",
+      "symptoms": [
+        "No clear disease symptoms in the supplied image."
+      ],
+      "management": [
+        "Continue scouting for rusts, smuts and foliar diseases."
+      ],
+      "fertilizer_guidance": [
+        "Follow soil-test-based NPK and micronutrient management and crop-stage recommendations."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/en/node/5291"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "wheat_loose_smut",
+      "crop": "Wheat",
+      "disease": "Loose smut",
+      "dataset_label": "Wheat_Loose_Smut",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Infected heads may be replaced by masses of dark fungal spores.",
+        "The disease is most evident around heading."
+      ],
+      "management": [
+        "Use certified disease-free seed.",
+        "Use locally recommended seed treatment and resistant varieties where available.",
+        "Avoid saving seed from infected fields."
+      ],
+      "fertilizer_guidance": [
+        "Fertilizer does not cure seed-borne loose smut; maintain balanced nutrition for crop vigor."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "wheat_septoria",
+      "crop": "Wheat",
+      "disease": "Septoria leaf blotch",
+      "dataset_label": "Wheat_Septoria",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Irregular brown/tan leaf lesions may develop with small dark fruiting structures.",
+        "Severe infection can reduce green leaf area."
+      ],
+      "management": [
+        "Use resistant/tolerant cultivars where available.",
+        "Manage crop residues and rotation.",
+        "Scout during cool, wet periods and follow local advisories."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition and avoid excessive nitrogen."
+      ],
+      "chemical_management": [],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://www.icar.gov.in/sites/default/files/inline-files/Crop_Management.pdf"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    },
+    {
+      "id": "wheat_yellow_rust",
+      "crop": "Wheat",
+      "disease": "Yellow/stripe rust",
+      "dataset_label": "Wheat_Yellow_Rust",
+      "aliases": [],
+      "disease_type": "fungal",
+      "symptoms": [
+        "Yellow-orange pustules form in stripes along wheat leaves.",
+        "Disease is favored by cool conditions with intermittent moisture."
+      ],
+      "management": [
+        "Monitor fields regularly and report early outbreaks to local extension/KVK where appropriate.",
+        "Use resistant/tolerant varieties where available.",
+        "Avoid unnecessary early sowing under conditions identified as favorable for rust in local advisories."
+      ],
+      "fertilizer_guidance": [
+        "Maintain balanced nutrition; fertilizer is not a cure for rust."
+      ],
+      "chemical_management": [
+        "ICAR/DWR advisory documented propiconazole 25 EC at 0.1% (1 ml/L) for yellow rust in a specific outbreak advisory. ICAR's wheat-rust task-force material also documents propiconazole, tebuconazole and triadimefon in specific advisories. Verify current label registration, dose, crop stage and local recommendation before application."
+      ],
+      "prevention": [
+        "Use healthy planting material/seed where applicable.",
+        "Scout the crop regularly and remove or isolate heavily affected material where appropriate.",
+        "Maintain good field sanitation, drainage and crop-specific cultural practices."
+      ],
+      "sources": [
+        "https://icar.gov.in/en/node/5291",
+        "https://icar.gov.in/index.php/en/node/4151"
+      ],
+      "region": "India",
+      "last_verified": "2026-09-20",
+      "safety_note": "This knowledge base is decision support, not a substitute for a local agricultural expert. Chemical products, permitted crops, concentrations, pre-harvest intervals and legal registrations can change. Use only products currently registered/labeled for the crop and disease in the user's region and follow the current product label. Do not infer a dosage when one is not explicitly sourced."
+    }
+  ]
+}

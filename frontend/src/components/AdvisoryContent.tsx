@@ -1,6 +1,6 @@
 import { BookOpen, ShieldCheck, AlertTriangle, Info, Download, ExternalLink, ScanSearch, Sprout, Wrench, Eye, Activity } from 'lucide-react';
 import { toast } from 'sonner';
-import { Advisory, Detection, Guidance } from '../types';
+import { Advisory, Detection, Guidance, RagEntry } from '../types';
 import { useApp } from '../app/context';
 import { downloadAttachment } from '../api/client';
 
@@ -115,6 +115,40 @@ const CropGuidance = ({ g }: { g: Guidance }) => {
     </section>
   );
 };
+const RagSection = ({ rag }: { rag: RagEntry }) => {
+  const { t } = useApp();
+  return (
+    <section className="expert-note" data-testid="rag-knowledge">
+      <div className="section-title"><h2><BookOpen size={19} />{t('Knowledge base · ICAR sources', 'ज्ञान आधार · ICAR स्रोत', 'ਗਿਆਨ ਸਰੋਤ · ICAR ਸਰੋਤ')}</h2></div>
+      <p className="prediction-meta">
+        {t(
+          `Matched ${rag.matched} · ${rag.disease_type || 'condition'} · verified ${rag.last_verified || ''}`,
+          `मेल: ${rag.matched} · प्रकार: ${rag.disease_type || 'स्थिति'} · सत्यापित ${rag.last_verified || ''}`,
+          `ਮੇਲ: ${rag.matched} · ਕਿਸਮ: ${rag.disease_type || 'ਸਥਿਤੀ'} · ਤਸਦੀਕ ${rag.last_verified || ''}`
+        )}
+      </p>
+      <div className="section-title"><h3><Eye size={16} />{t('Symptoms', 'लक्षण', 'ਲੱਛਣ')}</h3></div>
+      <ul data-testid="rag-symptoms">{rag.symptoms.map((s, i) => <li key={i}>{s}</li>)}</ul>
+      <div className="section-title"><h3><Wrench size={16} />{t('Management', 'प्रबंधन', 'ਪ੍ਰਬੰਧਨ')}</h3></div>
+      <ul data-testid="rag-management">{rag.management.map((s, i) => <li key={i}>{s}</li>)}</ul>
+      {rag.treatment.length > 0 && (
+        <>
+          <div className="section-title"><h3><Activity size={16} />{t('Treatment (chemical)', 'उपचार (रासायनिक)', 'ਇਲਾਜ (ਰਸਾਇਣਕ)')}</h3></div>
+          <ul data-testid="rag-treatment">{rag.treatment.map((s, i) => <li key={i}>{s}</li>)}</ul>
+        </>
+      )}
+      <div className="section-title"><h3><Sprout size={16} />{t('Fertilizer guidance', 'उर्वरक मार्गदर्शन', 'ਖਾਦ ਮਾਰਗਦਰਸ਼ਨ')}</h3></div>
+      <ul data-testid="rag-fertilizer">{rag.fertilizer.map((s, i) => <li key={i}>{s}</li>)}</ul>
+      <div className="section-title"><h3><ShieldCheck size={16} />{t('Prevention', 'रोकथाम', 'ਬਚਾਅ')}</h3></div>
+      <ul data-testid="rag-prevention">{rag.prevention.map((s, i) => <li key={i}>{s}</li>)}</ul>
+      <div className="section-title"><h3><ExternalLink size={16} />{t('Sources', 'स्रोत', 'ਸਰੋਤ')}</h3></div>
+      <ul className="prediction-alternatives" data-testid="rag-sources">
+        {rag.sources.map((s, i) => <li key={i}><a href={s} target="_blank" rel="noreferrer">{s}</a></li>)}
+      </ul>
+      {rag.safety_note && <div className="safety-boundary" data-testid="rag-safety"><ShieldCheck size={19} /><p>{rag.safety_note}</p></div>}
+    </section>
+  );
+};
 export const AdvisoryContent = ({ item }: { item: Advisory }) => {
   const { t } = useApp();
   const d = item.detections;
@@ -139,6 +173,7 @@ export const AdvisoryContent = ({ item }: { item: Advisory }) => {
       <DiagnosisBanner item={item} />
       {predicted && d && <CropPrediction d={d} />}
       {predicted && d?.guidance && <CropGuidance g={d.guidance} />}
+      {predicted && d?.rag && <RagSection rag={d.rag} />}
       {item.expert_recommendation && (
         <section className="expert-note">
           <div className="section-title"><h2><ShieldCheck size={19} />{t('A note from your expert', 'आपके विशेषज्ञ की सलाह', 'ਤੁਹਾਡੇ ਮਾਹਰ ਦੀ ਸਲਾਹ')}</h2></div>

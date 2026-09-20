@@ -36,7 +36,9 @@ class LocalCropVisionAdapter:
             return {'status': 'unavailable', 'mode': 'local_keras_cnn', 'disease': None, 'confidence': None, 'reason': 'Uploaded images could not be read by the crop model.'}
         best = max(results, key=lambda r: r['confidence'])
         per_image = [{k: v for k, v in r.items() if k != 'top_predictions'} for r in results]
-        return {**best, 'disease': best['class_label'] or f"Class #{best['class_id']}", 'images_analyzed': len(results), 'all_images': per_image}
+        from ..ml import rag_service
+        rag = rag_service.retrieve(best.get('class_label'))
+        return {**best, 'disease': best['class_label'] or f"Class #{best['class_id']}", 'rag': rag, 'images_analyzed': len(results), 'all_images': per_image}
 class WeatherAdapter(Protocol):
     async def get(self, location: str) -> dict: ...
 class NoDataWeatherAdapter:

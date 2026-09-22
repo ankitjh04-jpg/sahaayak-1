@@ -56,8 +56,9 @@ services:
         destination: /index.html
     envVars:
       # replace the placeholder with your backend service URL after the backend deploys
+      # client.ts appends /api/v1 itself - set the ORIGIN only
       - key: REACT_APP_BACKEND_URL
-        value: https://sahaayak-backend.onrender.com/api/v1
+        value: https://sahaayak-backend.onrender.com
     headers:
       - path: /service-worker.js
         headers:

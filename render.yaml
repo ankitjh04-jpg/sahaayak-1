@@ -1,0 +1,65 @@
+services:
+  # ---- Backend: FastAPI + ML model ----
+  - type: web
+    name: sahaayak-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: DB_NAME
+        value: sahaayak
+      - key: DEMO_MODE
+        value: "true"
+      - key: DEMO_OTP
+        value: "123456"
+      - key: DEMO_FARMER_PHONE
+        value: "+919876543210"
+      - key: DEMO_EXPERT_PHONE
+        value: "+919876543211"
+      - key: STORAGE_ROOT
+        value: /tmp/sahaayak_objects
+      - key: MAX_UPLOAD_BYTES
+        value: "10485760"
+      - key: OTP_PROVIDER
+        value: auto
+      - key: TWILIO_VERIFY_BASE_URL
+        value: https://verify.twilio.com/v2
+      - key: WEATHER_PROVIDER
+        value: auto
+      - key: OPEN_METEO_URL
+        value: https://api.open-meteo.com/v1/forecast
+      - key: OPENWEATHER_URL
+        value: https://api.openweathermap.org/data/2.5/weather
+      - key: OSM_TILE_URL
+        value: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+      # set these two in the Render dashboard after first deploy:
+      - key: MONGO_URL            # your Atlas connection string
+        sync: false
+      - key: FRONTEND_ORIGIN      # your Render static-site URL, e.g. https://sahaayak.onrender.com
+        sync: false
+
+  # ---- Frontend: React static site ----
+  - type: web
+    name: sahaayak-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      # replace the placeholder with your backend service URL after the backend deploys
+      - key: REACT_APP_BACKEND_URL
+        value: https://sahaayak-backend.onrender.com/api/v1
+    headers:
+      - path: /service-worker.js
+        headers:
+          - key: Cache-Control
+            value: no-cache
